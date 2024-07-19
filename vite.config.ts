@@ -9,7 +9,9 @@ export default defineConfig({
   plugins: [
     react(),
     legacy()
+   
   ],
+  base:"/kalasan-camera/",
   test: {
     globals: true,
     environment: 'jsdom',
