@@ -1,6 +1,6 @@
 import React from 'react';
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import PhotoContainer from '../components/PhotoContainer';
+import CameraContainer from '../components/PhotoContainer'; // Ensure this path is correct
 import './Tab2.css';
 
 const Tab2: React.FC = () => {
@@ -17,7 +17,7 @@ const Tab2: React.FC = () => {
             <IonTitle size="large">Tab 2</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <PhotoContainer />
+        <CameraContainer />
       </IonContent>
     </IonPage>
   );

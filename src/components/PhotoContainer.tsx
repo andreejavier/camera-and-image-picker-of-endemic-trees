@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { IonButton, IonImg } from '@ionic/react';
-import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 
-const PhotoContainer: React.FC = () => {
+const CameraContainer: React.FC = () => {
   const [photo, setPhoto] = useState<string | undefined>(undefined);
 
   const takePhoto = async () => {
-    const image: Photo = await Camera.getPhoto({
+    const image = await Camera.getPhoto({
       quality: 90,
       allowEditing: false,
       resultType: CameraResultType.DataUrl,
@@ -23,4 +23,4 @@ const PhotoContainer: React.FC = () => {
   );
 };
 
-export default PhotoContainer;
+export default CameraContainer;
