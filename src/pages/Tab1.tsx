@@ -196,7 +196,6 @@ const Tab1: React.FC = () => {
                 <IonLabel position="floating"><pre>Latitude: <span>{treeData.lat}</span></pre></IonLabel>
                 <IonLabel position="floating"><pre>Longitude: <span>{treeData.lon}</span></pre></IonLabel>
               </div>
-              <IonButton onClick={handleReplace}>Replace</IonButton>
               <IonButton onClick={uploadImage}>Upload Image</IonButton>
               {/* Map Component */}
               <div className="map-container" style={{ height: '400px', marginTop: '20px' }}>
