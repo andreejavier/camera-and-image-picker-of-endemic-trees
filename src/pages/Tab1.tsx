@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonImg, IonBackButton, IonButtons, IonInput, IonItem, IonLabel } from '@ionic/react';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
@@ -43,7 +43,6 @@ const Tab1: React.FC = () => {
       setPhoto(image.dataUrl);
       setPhotoFileName(new Date().getTime() + '.jpg');
       setTreeData(prevData => ({ ...prevData, image: image.dataUrl }));
-      extractExifData(image.dataUrl);
     } catch (error) {
       console.error('Error taking photo:', error);
     }
@@ -60,7 +59,6 @@ const Tab1: React.FC = () => {
       setPhoto(image.dataUrl);
       setPhotoFileName(new Date().getTime() + '.jpg');
       setTreeData(prevData => ({ ...prevData, image: image.dataUrl }));
-      extractExifData(image.dataUrl);
     } catch (error) {
       console.error('Error picking image:', error);
     }
@@ -205,7 +203,7 @@ const Tab1: React.FC = () => {
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                   />
                   {treeData.lat && treeData.lon && (
-                    <Marker position={mapCenter}>
+                    <Marker position={[parseFloat(treeData.lat), parseFloat(treeData.lon)]}>
                       <Popup>
                         {treeData.name} <br /> {treeData.scientificName}
                       </Popup>
